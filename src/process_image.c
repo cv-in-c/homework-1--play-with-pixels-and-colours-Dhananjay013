@@ -30,7 +30,7 @@ image copy_image(image im)
 {
     image copy = make_image(im.w, im.h, im.c);
     int k=im.w*im.h*im.c;
-    for(int i=0:i<k:i++)
+    for(int i=0;i<k;i++)
     copy.data[i]=im.data[i];
     return copy;
 }
@@ -62,7 +62,7 @@ void shift_image(image im, int c, float v)
 void clamp_image(image im)
 {
     for(int i=0;i<im.h*im.w*im.c;i++){
-        if(im.data[i],0)
+        if(im.data[i]<0)
         im.data[i]=0;
         else if(im.data[i]>1)
         im.data[i]=1;
